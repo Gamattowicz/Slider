@@ -42,6 +42,7 @@ const mainText = document.querySelector('h1.title');
 const subText = document.querySelector('div.element-text');
 const dots = [...document.querySelectorAll('div.dots span')];
 let active = 0;
+let clickedDotId;
 
 //Time when images should change themselves in milliseconds
 const time = 1500;
@@ -83,5 +84,20 @@ const changeKey = (e) => {
     }
 
 }
+
+//function change image after click at one of dots
+const changeImgByDot = (e) => {
+    active = e.target.dataset.key;
+    console.log(active);
+    clearInterval(start);
+    image.src = dataList[active].img;
+    mainText.textContent = dataList[active].text;
+    changeDots()
+    start = setInterval(changeImg, time)
+}
+
+dots.forEach((dot) => {
+    dot.addEventListener('click', changeImgByDot)
+})
 
 window.addEventListener('keydown', changeKey)
