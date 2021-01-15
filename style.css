@@ -59,3 +59,7 @@ div.dots span {
     border-radius: 50%;
     box-shadow: 0 0 0 5px white;
 }
+
+div.dots span.active {
+    box-shadow: 0 0 0 5px white, 0 0 5px 10px yellow;
+}
