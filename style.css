@@ -22,9 +22,9 @@ img.slider {
 
 h1.title {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     font-size: 60px;
     color: white;
     font-family: sans-serif;
@@ -33,9 +33,9 @@ h1.title {
 
 div.element-text {
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     font-size: 22px;
     color: white;
     font-family: sans-serif;
@@ -47,7 +47,7 @@ div.dots {
     position: absolute;
     top: 90%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 }
 
 div.dots span {
