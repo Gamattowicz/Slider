@@ -50,6 +50,10 @@ div.dots {
     transform: translateX(-50%);
 }
 
+div.dots {
+    user-select: none;
+}
+
 div.dots span {
     display: inline-block;
     background-color: transparent;
@@ -75,4 +79,34 @@ div.dots span:active {
     background-color: red;
     box-shadow: 0 0 2px 4px red;
     transform: scale(1.2);
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 5%;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .1);
+    border: 0;
+    font-size: 3rem;
+    color: #fff;
+    outline: none;
+    transition: .3s;
+}
+
+button.prev {
+    left: 0%;
+}
+
+button.next {
+    right: 0%;
+}
+
+button.prev:hover,
+button.next:hover {
+    background: rgba(0, 0, 0, .3);
+    color: red;
 }
