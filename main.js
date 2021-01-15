@@ -46,12 +46,14 @@ let active = 0;
 //Time when images should change themselves in milliseconds
 const time = 1500;
 
+//current glowing dot change function
 const changeDots = () => {
     const currentDot = dots.findIndex(dot => dot.classList.contains('active'));
     dots[currentDot].classList.remove('active');
     dots[active].classList.add('active');
 }
 
+//images change control function
 const changeImg = () => {
     active++;
     if (active === dataList.length) {
@@ -62,4 +64,24 @@ const changeImg = () => {
     changeDots()
 }
 
-setInterval(changeImg, time)
+let start = setInterval(changeImg, time)
+
+//function change image after use left/right arrow 
+const changeKey = (e) => {
+    if (e.keyCode === 37 || e.keyCode === 39) {
+        clearInterval(start);
+        e.keyCode == 37 ? active-- : active++;
+        if (active === dataList.length) {
+            active = 0;
+        } else if (active < 0) {
+            active = dataList.length - 1;
+        }
+        image.src = dataList[active].img;
+        mainText.textContent = dataList[active].text;
+        changeDots()
+        start = setInterval(changeImg, time)
+    }
+
+}
+
+window.addEventListener('keydown', changeKey)
