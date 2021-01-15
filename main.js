@@ -40,11 +40,17 @@ dataList = [{
 const image = document.querySelector('img.slider');
 const mainText = document.querySelector('h1.title');
 const subText = document.querySelector('div.element-text');
-const dots = document.querySelectorAll('div.dots span');
+const dots = [...document.querySelectorAll('div.dots span')];
 let active = 0;
 
 //Time when images should change themselves in milliseconds
 const time = 1500;
+
+const changeDots = () => {
+    const currentDot = dots.findIndex(dot => dot.classList.contains('active'));
+    dots[currentDot].classList.remove('active');
+    dots[active].classList.add('active');
+}
 
 const changeImg = () => {
     active++;
@@ -53,6 +59,7 @@ const changeImg = () => {
     }
     image.src = dataList[active].img;
     mainText.textContent = dataList[active].text;
+    changeDots()
 }
 
 setInterval(changeImg, time)
