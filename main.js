@@ -36,3 +36,23 @@ dataList = [{
         text: 'Ninth picture'
     }
 ];
+
+const image = document.querySelector('img.slider');
+const mainText = document.querySelector('h1.title');
+const subText = document.querySelector('div.element-text');
+const dots = document.querySelectorAll('div.dots span');
+let active = 0;
+
+//Time when images should change themselves in milliseconds
+const time = 1500;
+
+const changeImg = () => {
+    active++;
+    if (active === dataList.length) {
+        active = 0;
+    }
+    image.src = dataList[active].img;
+    mainText.textContent = dataList[active].text;
+}
+
+setInterval(changeImg, time)
