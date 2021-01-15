@@ -52,14 +52,27 @@ div.dots {
 
 div.dots span {
     display: inline-block;
-    background-color: red;
+    background-color: transparent;
     margin: 0 15px;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    box-shadow: 0 0 0 5px white;
+    box-shadow: 0 0 0 3px white;
+    transition: .2s;
 }
 
 div.dots span.active {
-    box-shadow: 0 0 0 5px white, 0 0 5px 10px yellow;
+    box-shadow: 0 0 0 3px white;
+    background-color: white;
+}
+
+div.dots span:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 5px white;
+}
+
+div.dots span:active {
+    background-color: red;
+    box-shadow: 0 0 2px 4px red;
+    transform: scale(1.2);
 }
