@@ -40,6 +40,7 @@ div.element-text {
     color: white;
     font-family: sans-serif;
     text-shadow: 0 0 7px black;
+    text-align: center;
     opacity: 0.8;
 }
 
@@ -89,11 +90,12 @@ button.next {
     height: 100%;
     width: 5%;
     cursor: pointer;
-    background: rgba(0, 0, 0, .1);
+    background: rgba(0, 0, 0, 1);
     border: 0;
     font-size: 3rem;
     color: #fff;
     outline: none;
+    opacity: .1;
     transition: .3s;
 }
 
@@ -107,6 +109,5 @@ button.next {
 
 button.prev:hover,
 button.next:hover {
-    background: rgba(0, 0, 0, .3);
-    color: red;
+    opacity: .4;
 }

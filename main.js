@@ -101,3 +101,27 @@ dots.forEach((dot) => {
 })
 
 window.addEventListener('keydown', changeKey)
+
+//function change image after lick at one of button 
+
+const leftBtn = document.querySelector('button.prev');
+const rightBtn = document.querySelector('button.next');
+
+const changeSlider = (e) => {
+    if (e.target == leftBtn || e.target == rightBtn) {
+        clearInterval(start);
+        e.target == leftBtn ? active-- : active++;
+        if (active === dataList.length) {
+            active = 0;
+        } else if (active < 0) {
+            active = dataList.length - 1;
+        }
+        image.src = dataList[active].img;
+        mainText.textContent = dataList[active].text;
+        changeDots()
+    }
+}
+
+[...document.querySelectorAll('button')].forEach(button => {
+    button.addEventListener('click', changeSlider)
+});
