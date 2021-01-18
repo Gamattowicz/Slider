@@ -23,7 +23,7 @@
 ## Demo
 Check demo here: [Slider](https://gamattowicz.github.io/Slider/)
 
-<img alt="Slider screen" src="https://github.com/Gamattowicz/To_do_app/blob/main/img/slider_screen.png"/>
+<img alt="Slider screen" src="https://github.com/Gamattowicz/Slider/blob/main/images/slider_screen.png"/>
 
 ## Status 
 Project is finished.
