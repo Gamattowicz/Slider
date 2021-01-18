@@ -119,6 +119,7 @@ const changeSlider = (e) => {
         image.src = dataList[active].img;
         mainText.textContent = dataList[active].text;
         changeDots()
+        start = setInterval(changeImg, time)
     }
 }
 
